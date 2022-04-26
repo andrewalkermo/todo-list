@@ -4,19 +4,27 @@
   --tertiary-color: rgb(146, 0, 0);
   --background-color: rgb(249, 244, 227);
 }
-
-body {
+html, body {
+  width: 100vw;
+  min-width: 100vw;
+  max-width: 100vw;
+  overflow-x: hidden;
+  overflow-y: auto;
   box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Roboto', sans-serif;
-  font-size: 16px;
   background-color: var(--background-color);
   color: var(--primary-color);
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
 }
 
+@media screen and (max-width: 1000px) {
+  html, body {
+    font-size: 35px;
+  }
+}
+  
 main {
   width: 100%;
   max-width: 1200px;
@@ -40,10 +48,12 @@ main > h1 {
 .todo {
   font-size: 1.5rem;
   margin-bottom: 15px;
-  transition: 200ms;
   display: flex;
   min-width: 50%;
   max-width: 100%;
+}
+.todo > * {
+  transition: 300ms;
 }
 
 .todo input[type="checkbox"] {
@@ -52,11 +62,11 @@ main > h1 {
   -moz-appearance: none;
   appearance: none;
   outline: none;
-  width: 20px;
-  height: 20px;
+  width: 1.5rem;
+  height: 1.5rem;
   border: 1px solid var(--primary-color);
   border-radius: 3px;
-  vertical-align: text-top;
+  vertical-align: middle;
   cursor: pointer;
 }
 
