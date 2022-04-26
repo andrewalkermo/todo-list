@@ -1,0 +1,111 @@
+:root {
+  --primary-color: rgb(48, 48, 48);
+  --secondary-color: rgb(201, 201, 201);
+  --tertiary-color: rgb(146, 0, 0);
+  --background-color: rgb(249, 244, 227);
+}
+
+body {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  background-color: var(--background-color);
+  color: var(--primary-color);
+}
+
+main {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 20px;
+}
+
+main > h1 {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.todo {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  transition: 200ms;
+  display: flex;
+  min-width: 50%;
+  max-width: 100%;
+}
+
+.todo input[type="checkbox"] {
+  margin-right: 10px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--primary-color);
+  border-radius: 3px;
+  vertical-align: text-top;
+  cursor: pointer;
+}
+
+.todo input[type="text"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
+  width: 100%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
+}
+
+.todo input[type="text"]::placeholder {
+  color: var(--secondary-color);
+}
+
+.todo input[type="text"]:focus, .todo input[type="text"]:hover {
+  border-bottom: 1px solid var(--primary-color);
+}
+
+.todo input[type="checkbox"]:checked {
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.todo input[type="checkbox"]:checked + input {
+  text-decoration: line-through;
+}
+
+.todo input[type="checkbox"]:checked + input:hover,
+.todo input[type="checkbox"]:checked + input:focus,
+.todo input[type="checkbox"]:checked + input:placeholder-shown {
+  text-decoration: none;
+}
+
+.todo > span.delete {
+  color: var(--tertiary-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+  font-weight: 700;
+  margin-right: 10px;
+  opacity: 0;
+}
+
+.todo:hover:not(:last-child) > span.delete {
+  opacity: 1;
+}
