@@ -1,8 +1,14 @@
 :root {
   --primary-color: rgb(48, 48, 48);
-  --secondary-color: rgb(201, 201, 201);
-  --tertiary-color: rgb(146, 0, 0);
+  --secondary-color: rgb(146, 0, 0);
   --background-color: rgb(249, 244, 227);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-color: rgb(249, 244, 227);
+    --background-color: rgb(48, 48, 48);
+  }
 }
 
 html,
@@ -38,6 +44,10 @@ main {
 main > h1 {
   font-size: 2.5rem;
   text-align: center;
+}
+main > h1 > span {
+  color: var(--background-color);
+  background-color: var(--primary-color);
 }
 
 .todo-list {
@@ -90,7 +100,7 @@ main > h1 {
 }
 
 .todo input[type="text"]::placeholder {
-  color: var(--secondary-color);
+  opacity: 0.3;
 }
 
 .todo input[type="text"]:focus,
@@ -114,7 +124,7 @@ main > h1 {
 }
 
 .todo > span.delete {
-  color: var(--tertiary-color);
+  color: var(--secondary-color);
   font-size: 1.5rem;
   cursor: pointer;
   font-weight: 700;
