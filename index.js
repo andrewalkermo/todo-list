@@ -20,6 +20,13 @@ function listenNewTasks() {
     this.parentNode.insertBefore(newTask, this);
     document.querySelector('.todo:nth-last-child(2) input[type="text"]').focus();
   });
+  document.querySelector('.todo').addEventListener('keyup', function(e) {
+    if (e.code === "Enter") {
+      let newTask = getNewTask();
+      this.parentNode.insertBefore(newTask, this.nextSibling);
+      newTask.focus();
+    }
+  });
 }
 
 function listenTaskChanges() {
